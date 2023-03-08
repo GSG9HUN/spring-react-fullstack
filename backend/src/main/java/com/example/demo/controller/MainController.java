@@ -1,28 +1,23 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.MainService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.example.demo.service.MovieRateService;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainController {
-
-
-    private static final Logger log = LoggerFactory.getLogger(MainController.class);
-    private MainService mainService;
-
-    public MainController(MainService mainService) {
-        this.mainService = mainService;
-    }
 
     @Value("${api.key}")
     private String apiKey;
     @Value("${api.url}")
     private String apiURL;
+    private MainService mainService;
+    private MovieRateService movieRateService;
+
+    public MainController(MainService mainService) {
+        this.mainService = mainService;
+    }
 
     @GetMapping("/getPopularMovies")
     public String getPopularMovies(@RequestParam(value = "pageNumber", defaultValue = "1") String pageNumber) {

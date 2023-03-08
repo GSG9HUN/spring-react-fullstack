@@ -1,40 +1,37 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Id;
 
-@Data
 @Entity
 public class MovieRate {
+
+    public MovieRate(){
+
+    }
     @Id
-    private Integer id;
+    private int ID;
 
-    private int movieId;
+    @Column
+    private int movieID;
 
-    private int rate;
+    @Column
+    private int score;
 
-    public int getId() {
-        return id;
+    public int getMovieID() {
+        return movieID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMovieID(int movieID) {
+        this.movieID = movieID;
     }
 
-    public int getMovieId() {
-        return movieId;
+    public int getScore() {
+        return score;
     }
 
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
+    public void setScore(int score) {
+        this.score = score;
     }
 }

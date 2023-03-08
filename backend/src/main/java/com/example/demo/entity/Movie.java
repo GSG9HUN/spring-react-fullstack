@@ -1,21 +1,25 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 
-import java.io.Serializable;
+public class Movie {
 
-@Data
-@Entity
-public class Movie implements Serializable {
 
+    public Movie(){
+
+    }
     @Id
-    private Integer id;
+    private int ID;
+    @Column
     private String posterPath;
+    @Column
     private String title;
+    @Column
     private String overview;
+    @Column
     private int page;
+    @Column
     private String results;
 
     public String getPosterPath() {

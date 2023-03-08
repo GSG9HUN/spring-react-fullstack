@@ -1,33 +1,40 @@
 package com.example.demo.entity;
 
 
-import jakarta.persistence.Entity;
-import lombok.Data;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
-@Data
+import java.io.Serializable;
+
 @Entity
-public class Comment {
+public class Comment implements Serializable {
+
+
+    public Comment() {
+
+    }
 
     @Id
-    private Integer id;
-    private int movieId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int ID;
+    @Column
+    private int movieID;
+    @Column
     private String comment;
 
-    public int getMovieId() {
-        return movieId;
+    public int getID() {
+        return ID;
     }
 
-    public void setMovieId(int movieId) {
-        this.movieId = movieId;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public int getId() {
-        return id;
+    public int getMovieID() {
+        return movieID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMovieID(int movieID) {
+        this.movieID = movieID;
     }
 
     public String getComment() {
