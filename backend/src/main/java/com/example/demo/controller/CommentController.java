@@ -12,8 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class CommentController {
-    private CommentService commentService;
+    private final CommentService commentService;
     private static final Logger log = LoggerFactory.getLogger(CommentService.class);
 
     public CommentController(CommentService commentService) {

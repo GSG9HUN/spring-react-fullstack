@@ -12,16 +12,11 @@ public class MainService {
     private static final Logger log = LoggerFactory.getLogger(MainService.class);
 
     public String getResultAsString(String url) {
-        return (new RestTemplate()).getForObject(url, String.class, 1);
+        return (new RestTemplate()).getForObject(url, String.class);
     }
 
-    public Movie[] convertResultsToMovieArray(String result) {
-        Movie movie1 = new Movie();
-        Movie movie2 = new Movie();
-        return new Movie[]{movie1, movie2};
-    }
 
     public Movie getSpecificMovie(String url) {
-        return (new RestTemplate()).getForObject(url, Movie.class, 1);
+        return (new RestTemplate()).getForObject(url, Movie.class);
     }
 }

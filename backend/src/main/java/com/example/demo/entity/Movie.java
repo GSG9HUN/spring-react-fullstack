@@ -3,31 +3,34 @@ package com.example.demo.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 
+import java.lang.reflect.Array;
+
 public class Movie {
-
-
-    public Movie(){
+    public Movie() {
 
     }
     @Id
     private int ID;
     @Column
-    private String posterPath;
+    private String poster_path;
     @Column
     private String title;
     @Column
     private String overview;
     @Column
-    private int page;
+    private String imdb_id;
     @Column
-    private String results;
+    private String homepage;
+    @Column
+    private Array genres;
+
 
     public String getPosterPath() {
-        return posterPath;
+        return poster_path;
     }
 
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+    public void setPosterPath(String poster_path) {
+        this.poster_path = poster_path;
     }
 
     public String getTitle() {
@@ -46,19 +49,27 @@ public class Movie {
         this.overview = overview;
     }
 
-    public int getPage() {
-        return page;
+    public String getImdb_id() {
+        return imdb_id;
     }
 
-    public void setPage(int page) {
-        this.page = page;
+    public void setImdb_id(String imdb_id) {
+        this.imdb_id = imdb_id;
     }
 
-    public String getResults() {
-        return results;
+    public String getHomepage() {
+        return homepage;
     }
 
-    public void setResults(String results) {
-        this.results = results;
+    public void setHomepage(String homepage) {
+        this.homepage = homepage;
+    }
+
+    public Array getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Array genres) {
+        this.genres = genres;
     }
 }

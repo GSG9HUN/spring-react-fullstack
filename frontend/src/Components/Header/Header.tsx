@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import logo from "../../logo.svg"
 import "./Header.scss"
 import {TextField} from "@mui/material";
 import {IconButton} from "@mui/material";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import {Link} from "react-router-dom";
+import Logo from "./Logo";
 
 export default function Header() {
 
@@ -11,14 +12,12 @@ export default function Header() {
 
 
     return <div className={"header"}>
-        <div className={"left"}>
-            <img src={logo} className="App-logo" alt="logo"/>
-        </div>
+        <Link to={"/"} children={<Logo/>}/>
         <div className={"middle"} style={{color: "white"}}>
             <TextField id="standard-basic" label="MovieName" variant="standard"
                        value={movieName}
                        onChange={(e) => setMovieName(e.target.value)}/>
-            <IconButton><SearchOutlinedIcon/></IconButton>
+            <IconButton><SearchOutlinedIcon /></IconButton>
         </div>
     </div>
 }

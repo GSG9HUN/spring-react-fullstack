@@ -1,24 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
 import Header from "./Components/Header/Header";
-import MovieList from "./Components/MovieCard/MovieList";
-import IMovie from "./utils/Movie";
+import MovieList from "./Pages/home/MovieCard/MovieList";
+import {Route, Routes} from "react-router-dom";
+import SpecificMovie from "./Pages/home/specificMovie/SpecificMovie";
 
 function App() {
-
-
-    const [movies, setMovies] = useState<IMovie[]>([{title: "Cím", poster_path: "valami_url", overview: "hosszú leírás"}, {title: "Cím", poster_path: "valami_url", overview: "hosszú leírás"}, {title: "Cím",poster_path: "valami_url", overview: "hosszú leírás"}])
-
-
-    useEffect(() => {
-
-    }, [])
-
 
     return (
         <div className="App">
             <Header></Header>
-            <MovieList movies={movies}/>
+            <Routes>
+                <Route path={"/"} element={<MovieList/>}/>
+                <Route path={"/movie/:id"} element={<SpecificMovie/>}/>
+            </Routes>
         </div>
     );
 }
