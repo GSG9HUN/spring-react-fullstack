@@ -37,9 +37,4 @@ public class CommentService {
         }
 
     }
-
-    /*
-    public Comment[] updateComment(Comment comment){
-
-    }*/
 }

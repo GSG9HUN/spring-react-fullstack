@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./Components/Header/Header";
 import MovieList from "./Pages/home/MovieCard/MovieList";
 import {Route, Routes} from "react-router-dom";
-import SpecificMovie from "./Pages/home/specificMovie/SpecificMovie";
+import SpecificMovie from "./Pages/SpecificMovie/SpecificMovie";
 
 function App() {
 

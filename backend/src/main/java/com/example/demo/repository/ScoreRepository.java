@@ -1,9 +1,11 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.MovieRate;
+import com.example.demo.entity.Score;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MovieRateRepository extends JpaRepository<MovieRate, Integer> {
+public interface ScoreRepository extends JpaRepository<Score, Integer> {
+
+    Score[] findAllByMovieID(int movieID);
 }

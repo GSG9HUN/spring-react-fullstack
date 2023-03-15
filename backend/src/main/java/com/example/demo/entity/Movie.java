@@ -6,9 +6,6 @@ import jakarta.persistence.Id;
 import java.lang.reflect.Array;
 
 public class Movie {
-    public Movie() {
-
-    }
     @Id
     private int ID;
     @Column

@@ -1,23 +1,19 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
-public class MovieRate {
-
-    public MovieRate(){
+public class Score {
+    public Score() {
 
     }
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;
-
     @Column
     private int movieID;
-
     @Column
-    private int score;
+    private float score;
 
     public int getMovieID() {
         return movieID;
@@ -27,11 +23,19 @@ public class MovieRate {
         this.movieID = movieID;
     }
 
-    public int getScore() {
+    public float getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(float score) {
         this.score = score;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

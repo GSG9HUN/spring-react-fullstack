@@ -1,0 +1,33 @@
+.movieContent {
+  height: 50%;
+  width: 100%;
+  display: flex;
+
+  .poster {
+    width: 50%;
+    height: 25%;
+  img{
+    margin-left: 10%;
+    width: 75%;
+    height: 50%;
+  }
+  }
+
+  .overview {
+    width: 50%;
+
+    h2 {
+      width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    div {
+      margin: 5%;
+    }
+  }
+}
+
+.rating {
+  text-align: center;
+}

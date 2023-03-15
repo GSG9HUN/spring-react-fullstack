@@ -8,7 +8,7 @@ import {
     CardMedia,
 } from "@mui/material";
 import "./Movie.scss";
-import IMovie from "../../../utils/Movie";
+import IMovie from "../../../utils/IMovie";
 import {posterPath} from "../../../const/urls";
 
 interface props {
@@ -16,9 +16,14 @@ interface props {
 }
 
 export default function Movie({movie}: props) {
-    return <Card className={"card"} style={{maxHeight:600}}>
+
+    if (!movie.id) {
+        return <></>;
+    }
+
+    return <Card className={"card"} style={{maxHeight: 600}}>
         <CardMedia component={"img"} height={"400"} image={posterPath + movie.poster_path}
-                   alt={"random img"}/>
+                   alt={"movie img"}/>
         <CardHeader title={movie.title}></CardHeader>
         <CardContent>
             <Box

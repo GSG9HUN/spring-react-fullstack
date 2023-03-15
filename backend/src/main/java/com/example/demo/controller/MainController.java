@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Movie;
 import com.example.demo.service.MainService;
-import com.example.demo.service.MovieRateService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +24,13 @@ public class MainController {
     }
 
     @GetMapping("/getMovie/{id}")
-    public Movie getSpecificMovie(@PathVariable int id) {
+    public String getSpecificMovie(@PathVariable int id) {
         return this.mainService.getSpecificMovie(this.apiURL + "movie/" + id + "?api_key=" + this.apiKey);
     }
+
+    @GetMapping("/getActors/{movieID}")
+    public String getActors(@PathVariable int movieID) {
+        return this.mainService.getActorsToMovie(this.apiURL + "movie/" + movieID + "/credits?api_key=" + this.apiKey);
+    }
+
 }
