@@ -11,8 +11,8 @@ export const getMovieByID = async (id: number) => {
     return response.data
 }
 
-export const getMovieByName = async (name: String) => {
-    const response = await axios.get(''+name);
+export const getMovieByName = async (name: string, pageNumber: number) => {
+    const response = await axios.get(`${backendURL}/getMovieByName?name=` + name + "&pageNumber=" + pageNumber);
     return response.data
 }
 
@@ -42,5 +42,10 @@ export const getCommentsToMovie = async (movieID: number) => {
 
 export const deleteComment = async (commentID: number) => {
     const response = await axios.delete(`${backendURL}/comment/${commentID}`)
+    return response.data;
+}
+
+export const getActors = async (movieID: number) => {
+    const response = await axios.get(`${backendURL}/getActors/${movieID}`)
     return response.data;
 }

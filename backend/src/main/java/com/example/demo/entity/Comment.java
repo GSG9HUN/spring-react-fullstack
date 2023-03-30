@@ -7,12 +7,7 @@ import java.io.Serializable;
 
 @Entity
 public class Comment implements Serializable {
-
-
-    public Comment() {
-
-    }
-
+    public Comment() {}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;

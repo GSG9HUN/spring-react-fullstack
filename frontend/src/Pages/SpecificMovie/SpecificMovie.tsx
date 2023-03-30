@@ -9,6 +9,7 @@ import Actors from "./Actors/Actors";
 import Directors from "./Directors/Directors";
 import SpecificMovieDetails from "./SpecificMovieDetails";
 import MovieRating from "./Score/MovieRating";
+import Header from "../../Components/Header/Header";
 
 
 export default function SpecificMovie() {
@@ -42,14 +43,16 @@ export default function SpecificMovie() {
             setComments(response)
         })
     }
-
-    console.log(avgScore)
     //ide kell majd poszert imdb link comment avg score és stb
-    return <div className={"content"}>
-        <SpecificMovieDetails movie={movie} avgScore={avgScore}/>
-        <MovieRating movieID={movieID}/>
-        <AddNewComment movieID={movieID} refreshComments={refreshComments}/>
-        <Comment refreshComments={refreshComments} comments={comments}/>
+    return <>
+        <Header></Header>
+        <div className={"content"}>
+            <SpecificMovieDetails movie={movie} avgScore={avgScore}/>
+            <MovieRating movieID={movieID}/>
+            <AddNewComment movieID={movieID} refreshComments={refreshComments}/>
+            <Comment refreshComments={refreshComments} comments={comments}/>
+        </div>
+    </>
 
-    </div>
+
 }

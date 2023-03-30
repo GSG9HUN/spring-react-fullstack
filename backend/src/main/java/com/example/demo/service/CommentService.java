@@ -35,6 +35,5 @@ public class CommentService {
             log.error(e.getMessage());
             return false;
         }
-
     }
 }

@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class Score {
-    public Score() {
-
-    }
+    public Score() {}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ID;

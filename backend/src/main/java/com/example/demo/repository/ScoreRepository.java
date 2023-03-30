@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ScoreRepository extends JpaRepository<Score, Integer> {
-
     Score[] findAllByMovieID(int movieID);
 }
