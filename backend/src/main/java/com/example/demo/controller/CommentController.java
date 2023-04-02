@@ -15,7 +15,7 @@ import java.util.Map;
 @CrossOrigin(origins = "*")
 public class CommentController {
     private final CommentService commentService;
-    private static final Logger log = LoggerFactory.getLogger(CommentService.class);
+    private static final Logger log = LoggerFactory.getLogger(CommentController.class);
 
     public CommentController(CommentService commentService) {
         this.commentService = commentService;

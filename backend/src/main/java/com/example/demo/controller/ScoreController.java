@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "*")
 public class ScoreController {
 
-    private static final Logger log = LoggerFactory.getLogger(ScoreService.class);
+    private static final Logger log = LoggerFactory.getLogger(ScoreController.class);
     private final ScoreService movieRateService;
 
     public ScoreController(ScoreService movieRateService) {

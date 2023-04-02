@@ -10,24 +10,7 @@ public class MainService {
 
     private static final Logger log = LoggerFactory.getLogger(MainService.class);
 
-    public String getResultAsString(String url) {
-        return (new RestTemplate()).getForObject(url, String.class);
-    }
-
-    public String getSpecificMovie(String url) {
-        return (new RestTemplate()).getForObject(url, String.class);
-    }
-
-    public String getActorsToMovie(String url) {
-        return (new RestTemplate()).getForObject(url, String.class);
-    }
-
-    public String getDirectorsToMovie(String url) {
-        return (new RestTemplate()).getForObject(url, String.class);
-    }
-
-    public String getMovieByName(String url) {
-        log.info(url);
+    public String getPopularMovies(String url) {
         return (new RestTemplate()).getForObject(url, String.class);
     }
 }
