@@ -6,19 +6,9 @@ export const getPopularMovies = async (pageNumber: number = 1) => {
     return response.data
 }
 
-export const getMovieByID = async (id: number) => {
-    const response = await axios.get(`${backendURL}/getMovie/${id}`)
-    return response.data
-}
-
 export const getMovieByName = async (name: string, pageNumber: number) => {
     const response = await axios.get(`${backendURL}/getMovieByName?name=` + name + "&pageNumber=" + pageNumber);
     return response.data
-}
-
-export const getAvgScore = async (movieID: number) => {
-    const response = await axios.get(`${backendURL}/score/${movieID}`)
-    return response.data;
 }
 
 export const storeScoreToMovie = async (movieID: number, score: number) => {
@@ -45,7 +35,7 @@ export const deleteComment = async (commentID: number) => {
     return response.data;
 }
 
-export const getActors = async (movieID: number) => {
-    const response = await axios.get(`${backendURL}/getActors/${movieID}`)
+export const getDirectors = async (movieID: number) => {
+    const response = await axios.get(`${backendURL}/getDirectors/${movieID}`)
     return response.data;
 }

@@ -75,6 +75,8 @@ export default function MovieList() {
                 return <Link className={"link card"} key={movie.id} to={`/movie/${movie.id}`}
                              children={<Movie movie={movie}></Movie>}/>
             })}
+        </div>
+        <div className={"pagination"}>
             <Pagination page={pageNumber} count={totalPages} color="primary"
                         onChange={(event, value) => setPageNumber(value)}/>
         </div>

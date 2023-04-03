@@ -6,14 +6,15 @@
   .poster {
     width: 50%;
     height: 25%;
-  img{
-    margin-left: 10%;
-    width: 75%;
-    height: 50%;
-  }
+
+    img {
+      margin-left: 10%;
+      width: 75%;
+      height: 50%;
+    }
   }
 
-  .overview {
+  .details {
     width: 50%;
 
     h2 {
@@ -24,6 +25,14 @@
 
     div {
       margin: 5%;
+    }
+
+    .imdb {
+      text-align: center;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

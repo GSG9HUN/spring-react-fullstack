@@ -23,6 +23,7 @@ export default function AddNewComment({movieID, refreshComments}: props) {
         }
         storeCommentToMovie(movieID, comment).then(() => {
             refreshComments();
+            setComment("")
         }).catch(err => {
             alert(err.response.data.errors)
         })

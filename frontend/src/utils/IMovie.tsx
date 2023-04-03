@@ -4,5 +4,6 @@ export default interface IMovie {
     id: string,
     title: string,
     poster_path: string,
-    overview: string
+    overview: string,
+    imdb_id: string
 }

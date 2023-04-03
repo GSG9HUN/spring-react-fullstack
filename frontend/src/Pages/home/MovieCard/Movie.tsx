@@ -35,7 +35,6 @@ export default function Movie({movie}: props) {
                     WebkitBoxOrient: "vertical",
                     WebkitLineClamp: 3,
                     textOverflow: "ellipsis",
-                    //whiteSpace={"nowrap"}
                 }}
             >
                 {movie.overview}
